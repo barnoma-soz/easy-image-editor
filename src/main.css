@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply flex items-center justify-center min-h-screen bg-[#E3F2FD];
+    }
+
+    h2 {
+        @apply text-2xl font-semibold;
+    }
+
+    .editor-container {
+        @apply bg-white w-[850px] px-6 py-8 rounded-lg shadow;
+    }
+
+    .editor-container.disable :where(.editor-panel, .reset-filters, .save-img) {
+        @apply opacity-60 pointer-events-none;
+    }
+
+    .wrapper {
+        @apply flex min-h-[335px] my-5 space-x-4;
+    }
+
+    .editor-panel {
+        @apply w-[280px] border border-gray-300 rounded-lg px-4 py-5;
+    }
+
+    .editor-panel .title {
+        @apply block mb-3 text-lg;
+    }
+
+    .editor-panel {
+        @apply space-y-4;
+    }
+
+    .editor-panel .filters,
+    .editor-panel .rotate {
+        @apply space-y-2;
+    }
+
+    .editor-panel .options {
+        @apply grid gap-2;
+    }
+
+    .editor-panel .filters .options {
+        @apply grid-cols-2;
+    }
+
+    .editor-panel .rotate .options {
+        @apply grid-cols-4;
+    }
+
+    .editor-panel button {
+        @apply flex items-center justify-center h-10 text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-100;
+    }
+
+    .filters button.active {
+        @apply bg-blue-500 border-blue-500 text-white;
+    }
+
+    .filters .slider .slider-info {
+        @apply flex items-center justify-between text-sm;
+    }
+
+    .filters .slider input {
+        @apply w-full h-1.5 accent-blue-500;
+    }
+
+    .preview-img {
+        @apply flex flex-grow items-center justify-center overflow-hidden;
+    }
+
+    .preview-img img {
+        @apply max-w-[490px] max-h-[335px] w-full h-full object-contain;
+    }
+
+    .controls {
+        @apply flex items-center justify-between;
+    }
+
+    .controls-right {
+        @apply space-x-2;
+    }
+
+    .controls button {
+        @apply bg-white px-5 py-2.5 rounded uppercase;
+    }
+
+    .controls .reset-filters {
+        @apply border border-gray-300 text-gray-500;
+    }
+
+    .controls .choose-img {
+        @apply border border-gray-500 bg-gray-500 text-white;
+    }
+
+    .controls .save-img {
+        @apply border border-blue-500 bg-blue-500 text-white;
+    }
+}
